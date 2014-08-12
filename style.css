@@ -1,7 +1,13 @@
+@font-face {
+    font-family: NotoSansHant-Thin;
+    src: url(NotoSansHant-Thin.otf);
+}
+
 html, body {
     height: 100%;
     background-image: linear-gradient( -30deg, rgb(165, 193, 166), rgb(15, 57, 52));
     color: rgb(230, 230, 230);
+    font-family: 'Raleway', sans-serif, NotoSansHant-Thin;
 }
 
 .centerTitle {
@@ -12,8 +18,4 @@ html, body {
     right:0;
     margin:auto;
     text-align: center;
-}
-
-.one {
-    background-color: rgb(200,200,200);
 }
