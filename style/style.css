@@ -1,0 +1,56 @@
+@font-face {
+    font-family: NotoSansHant-Thin;
+    src: url(NotoSansHant-Thin.otf);
+}
+
+html, body {
+    height: 100%;
+    background-image: linear-gradient( -30deg, rgb(165, 193, 166), rgb(15, 57, 52));
+    background-attachment: fixed;
+    color: rgb(230, 230, 230);
+    font-family: 'Raleway', sans-serif, NotoSansHant-Thin;
+}
+
+section {
+    height: 100%;
+}
+
+.centerTitle {
+    position:absolute;
+    width:40%; height:250px;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    text-align: center;
+}
+
+.link {
+    font-size: 20px;
+    margin: 20px 20px 20px 20px;
+    bottom: 0;
+    position: absolute;
+    left: 100px;
+}
+
+.link > .container >ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link > .container > ul > li {
+    display: inline;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+}
+
+.link > .container > ul > li > a {
+    color: white;
+}
+
+.link > .container > ul > li > a:hover {
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.5);
+}
