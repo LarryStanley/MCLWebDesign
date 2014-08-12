@@ -15,22 +15,22 @@
 
 </head>
 <body>
-    <section>
+    <div class="link">
+        <div class="container">
+            <ul id="linkBar">
+
+            </ul>
+        </div>
+    </div>
+    <script>showLink();</script>
+    <section id="top">
         <div class="centerTitle animated fadeInLeft">
             <h1>國立中央大學數學系 計算實驗室</h1>
             <HR>
             <h2>Mathematics Computation Laboratory</h2>
         </div>
-        <div class="link">
-            <div class="container">
-                <ul id="linkBar">
-
-                </ul>
-            </div>
-        </div>
-        <script>showLink();</script>
     </section>
-    <section>
+    <section id="introduction">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -42,10 +42,54 @@
             </div>
         </div>
     </section>
+    <section id="rule">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>使用守則</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="classAgenda">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>教室使用表</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="printService">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>列印服務</h2>
+                </div>
+                <div class="col-md-6">
+                    <p>請雙面列印</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="duty">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>大一值班</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script type="text/javascript" src="js/skrollr.js"></script>
     <script type="text/javascript">
     $(window).scroll(function () {
         changeTitleOpacity(getWindowPercentage());
+        if(getWindowPercentage() > 0.95)
+            changeLinkToFix();
+        else
+            changeLinkToAbsolute();
     });
     </script>
 </body>
