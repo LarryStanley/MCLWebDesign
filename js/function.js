@@ -1,11 +1,11 @@
-var linkData = ["實驗室介紹", "使用守則", "教室使用表", "列印服務", "大一值班"];
+var linkData = ["實驗室簡介", "使用守則", "教室使用表", "列印服務", "大一值班"];
 var linkFuction = ["introduction", "rule", "classAgenda","printService", "duty"];
 
 var linkTimes = 0;
 var barFixed = false;
 function showLink() {
     setTimeout(function() {
-        $("#linkBar").append("<li class='animated fadeIn'><a href='#" + linkFuction[linkTimes] + "' onclick=showID('#" + linkFuction[linkTimes] + "')>" + linkData[linkTimes] + "</a></li");
+        $("#linkBar").append("<li class='animated fadeIn'><a onclick=showID('#" + linkFuction[linkTimes] + "')>" + linkData[linkTimes] + "</a></li");
 
         linkTimes++;
         if (linkTimes < linkData.length)
@@ -46,11 +46,11 @@ function changeLinkToAbsolute() {
 function showID(scrollID) {
     $('html, body').animate({
         scrollTop: $(scrollID).offset().top
-    }, 500);
+    }, 1000);
 }
 
 function scrollToTop() {
     $('html, body').animate({
         scrollTop: 0
-    }, 500);
+    }, 1000);
 }

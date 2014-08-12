@@ -12,19 +12,28 @@ html, body {
 }
 
 section {
-    height: 100%;
     padding-top: 40px;
+    height: 100%;
+}
+
+td {
+    text-align: center;
+}
+
+.sectionContent {
+    margin-top: 20%;
 }
 
 .centerTitle {
     position:absolute;
-    width:40%; height:250px;
+    width:580px; height:250px;
     top:0;
     bottom:0;
     left:0;
     right:0;
     margin:auto;
     text-align: center;
+    white-space: nowrap;
 }
 
 .link {
@@ -54,5 +63,6 @@ section {
 
 .link > .container > ul > li > a:hover {
     text-decoration: none;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.3);
+    cursor: pointer;
 }
