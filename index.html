@@ -17,6 +17,14 @@
 
 </head>
 <body>
+    <div class="link">
+        <div class="container">
+            <ul id="linkBar">
+
+            </ul>
+        </div>
+    </div>
+    <script>showLink();</script>
     <div class="main">
         <section id="top">
             <div class="centerTitle animated fadeInLeft">
@@ -233,13 +241,15 @@
             easing: "ease",
             animationTime: 1000,
             pagination: true,
-            updateURL: false,
+            updateURL: true,
+            beforeMove: function(index) {
+                if (index > 1)
+                    changeLinkToFix();
+                else
+                    changeLinkToAbsolute();
+            }
 	 });
-     $(".main").onepage_scroll({
-         afterMove: function(index) {
-             changeLinkToFix();
-         }
-     })
+
     </script>
 </body>
 </html>

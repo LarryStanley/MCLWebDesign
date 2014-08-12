@@ -2,15 +2,15 @@ var linkData = ["實驗室簡介", "使用守則", "教室使用表", "列印服
 var linkFuction = ["introduction", "rule", "classAgenda","printService", "duty"];
 
 var linkTimes = 0;
-var barFixed = false;
+var barFixed = true;
 function showLink() {
     setTimeout(function() {
-        $("#linkBar").append("<li class='animated fadeIn'><a onclick=showID('#" + linkFuction[linkTimes] + "')>" + linkData[linkTimes] + "</a></li");
-
+        $("#linkBar").append("<li class='animated fadeIn'><a onclick='movePage(" + linkTimes + ")'>" + linkData[linkTimes] + "</a></li>");
         linkTimes++;
         if (linkTimes < linkData.length)
             showLink();
-    }, 500)
+    }, 500);
+    changeLinkToAbsolute();
 }
 
 function getWindowPercentage() {
@@ -27,30 +27,26 @@ function changeTitleOpacity(windowPercentage) {
 
 function changeLinkToFix() {
     if (!barFixed){
-        $(".link").css({"position":"fixed","top":"0","bottom":""});
-        $("#linkBar").append("<li class='animated fadeIn' id='top'><a href='#top' onclick='scrollToTop()'>Top</a></li>");
+        $(".link").fadeOut("fast",function(){
+            $(".link").css({"position":"fixed","top":"0","bottom":"","z-index":9999}).fadeIn();
+             $("#linkBar").append("<li class='animated fadeIn' id='top'><a onclick='movePage(-1)'>Top</a></li>");
+        });
         barFixed = true;
     }
 }
 
 function changeLinkToAbsolute() {
     if (barFixed) {
-        $(".link").css({"position":"absolute","top":"","bottom":"0"});
         $("#top").fadeOut(300,function() {
                 $(this).remove();
+        });
+        $(".link").fadeOut("fast",function(){
+            $(".link").css({"position":"absolute","top":"","bottom":"0","z-index":9999}).fadeIn();
         });
         barFixed = false;
     }
 }
 
-function showID(scrollID) {
-    $('html, body').animate({
-        scrollTop: $(scrollID).offset().top
-    }, 1000);
-}
-
-function scrollToTop() {
-    $('html, body').animate({
-        scrollTop: 0
-    }, 1000);
+function movePage(index) {
+    $(".main").moveTo(index+2);
 }
